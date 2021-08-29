@@ -2,7 +2,7 @@ import React, { useEffect } from "react";
 import * as THREE from "three";
 import Layout from "../coponents/layout";
 
-export default function sample2() {
+export default function Sample2() {
   const createBall = () => {
     // サイズを指定
     const width = 960;
