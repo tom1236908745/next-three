@@ -28,7 +28,8 @@ export default function Layout({ children }: { children: React.ReactNode }) {
             Sample1
           </Button>
         </Link>
-
+        &nbsp;
+        &nbsp;
         <Link href="/sample2">
           <Button variant="contained" color="primary">
             Sample2
