@@ -1,11 +1,9 @@
 import React, { useEffect } from "react";
 import * as THREE from "three";
 import Link from "next/link";
-import type { NextPage } from "next";
-import styles from "../styles/Home.module.css";
 import Layout from "../coponents/layout";
 
-const Home: NextPage = () => {
+export default function() {
   /** case1 */
   const createBox = () => {
     // サイズを指定
@@ -231,8 +229,8 @@ const Home: NextPage = () => {
   }, []);
   return (
     
-      <main>
-        <Link href="/sample2"><a> Home </a></Link>
+      <Layout>
+        
         <h2>three.js</h2>
         <h3>case1</h3>
         <canvas id="nyumon-sample1" />
@@ -244,9 +242,7 @@ const Home: NextPage = () => {
         <canvas id="nyumon-sample4" />
         <h3>case5 - 箱増殖(200個)</h3>
         <canvas id="nyumon-sample5" />
-      </main>
+      </Layout>
     
   );
 };
-
-export default Home;

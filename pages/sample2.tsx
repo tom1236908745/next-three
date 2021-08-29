@@ -1,7 +1,6 @@
 import React, { useEffect } from "react";
 import * as THREE from "three";
 import Layout from "../coponents/layout";
-import Image from 'next/image'
 
 export default function sample2() {
   const createBall = () => {
@@ -230,7 +229,7 @@ export default function sample2() {
       </h3>
       <canvas id="topologie-ball" />
       <br />
-      <img src="/earthmap1k.jpg" height={200} />
+      
     </Layout>
   );
 }
