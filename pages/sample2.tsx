@@ -188,14 +188,13 @@ export default function sample2() {
       requestAnimationFrame(tick);
     }
   };
-  // didMountの後で描画しないと、Cannot read property 'width' of nullというエラーが出る
-  // canvasが表示される前だから？
+  
   useEffect(() => {
     createBall();
     createEarth();
     createGeomeryBall();
     createTopologieBall();
-    // eslint-disable-next-line react-hooks/exhaustive-deps
+    
   }, []);
   return (
     <Layout>
