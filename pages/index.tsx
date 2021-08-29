@@ -1,72 +1,252 @@
-import type { NextPage } from 'next'
-import Head from 'next/head'
-import Image from 'next/image'
-import styles from '../styles/Home.module.css'
+import React, { useEffect } from "react";
+import * as THREE from "three";
+import Link from "next/link";
+import type { NextPage } from "next";
+import styles from "../styles/Home.module.css";
+import Layout from "../coponents/layout";
 
 const Home: NextPage = () => {
+  /** case1 */
+  const createBox = () => {
+    // サイズを指定
+    const width = 960;
+    const height = 540;
+
+    // レンダラを作成
+    const renderer: any = new THREE.WebGLRenderer({
+      canvas: document.querySelector("#nyumon-sample1") as HTMLCanvasElement,
+    });
+    renderer.setPixelRatio(window.devicePixelRatio);
+    renderer.setSize(width, height);
+
+    // シーンを作成
+    const scene = new THREE.Scene();
+
+    // カメラを作成
+    const camera = new THREE.PerspectiveCamera(45, width / height);
+    camera.position.set(0, 0, +1000);
+
+    // 箱を作成
+    const geometry = new THREE.BoxGeometry(400, 400, 400);
+    const material = new THREE.MeshNormalMaterial();
+    const box = new THREE.Mesh(geometry, material);
+    scene.add(box);
+
+    tick();
+
+    // 毎フレーム時に実行されるループイベント
+    function tick() {
+      box.rotation.x += 0.01;
+      box.rotation.y += 0.01;
+      box.rotation.z += 0.01;
+      renderer.render(scene, camera); // レンダリング
+
+      requestAnimationFrame(tick);
+    }
+  };
+
+  /** case2 */
+  const createBox2 = () => {
+    // サイズを指定
+    const width = 960;
+    const height = 540;
+
+    // レンダラを作成
+    const renderer: any = new THREE.WebGLRenderer({
+      canvas: document.querySelector("#nyumon-sample2") as HTMLCanvasElement,
+    });
+    renderer.setPixelRatio(window.devicePixelRatio);
+    renderer.setSize(width, height);
+
+    // シーンを作成
+    const scene = new THREE.Scene();
+
+    // カメラを作成
+    const camera = new THREE.PerspectiveCamera(45, width / height);
+    camera.position.set(0, 0, +1000);
+
+    // 箱を作成
+    const geometry = new THREE.BoxGeometry(400, 400, 400);
+    const material = new THREE.MeshNormalMaterial();
+    const box = new THREE.Mesh(geometry, material);
+    scene.add(box);
+
+    tick();
+
+    // 毎フレーム時に実行されるループイベント
+    function tick() {
+      box.rotation.y += 0.01;
+      box.rotation.z += 0.01;
+      renderer.render(scene, camera); // レンダリング
+
+      requestAnimationFrame(tick);
+    }
+  };
+
+  /** case3 */
+  const createBox3 = () => {
+    // サイズを指定
+    const width = 960;
+    const height = 540;
+
+    // レンダラを作成
+    const renderer: any = new THREE.WebGLRenderer({
+      canvas: document.querySelector("#nyumon-sample3") as HTMLCanvasElement,
+    });
+    renderer.setPixelRatio(window.devicePixelRatio);
+    renderer.setSize(width, height);
+
+    // シーンを作成
+    const scene = new THREE.Scene();
+
+    // カメラを作成
+    const camera = new THREE.PerspectiveCamera(45, width / height);
+    camera.position.set(0, 0, +1000);
+
+    // 箱を作成
+    const geometry = new THREE.BoxGeometry(400, 400, 400);
+    const material = new THREE.MeshNormalMaterial();
+    const box = new THREE.Mesh(geometry, material);
+    scene.add(box);
+
+    tick();
+
+    // 毎フレーム時に実行されるループイベント
+    function tick() {
+      box.rotation.y += 0.1;
+      box.rotation.x += 0.1;
+      renderer.render(scene, camera); // レンダリング
+
+      requestAnimationFrame(tick);
+    }
+  };
+
+  /** case4 */
+  const createBox4 = () => {
+    // サイズを指定
+    const width = 960;
+    const height = 540;
+
+    // レンダラを作成
+    const renderer: any = new THREE.WebGLRenderer({
+      canvas: document.querySelector("#nyumon-sample4") as HTMLCanvasElement,
+    });
+    renderer.setPixelRatio(window.devicePixelRatio);
+    renderer.setSize(width, height);
+
+    // シーンを作成
+    const scene = new THREE.Scene();
+
+    // カメラを作成
+    const camera = new THREE.PerspectiveCamera(45, width / height);
+    camera.position.set(0, 0, +1000);
+
+    // 箱を作成
+    const geometry = new THREE.BoxGeometry(400, 400, 400);
+    const material = new THREE.MeshNormalMaterial();
+    const box = new THREE.Mesh(geometry, material);
+    scene.add(box);
+
+    tick();
+
+    // 毎フレーム時に実行されるループイベント
+    function tick() {
+      box.rotation.y += 1;
+      box.rotation.x += 1;
+      renderer.render(scene, camera);
+
+      requestAnimationFrame(tick);
+    }
+  };
+
+  /** case5 */
+  // ここでは箱をたくさん作りたいので、箱を作っている処理のみ、関数化する。
+  /** 箱をつくる */
+  const createBoxFunc = (): THREE.Mesh<
+    THREE.BoxGeometry,
+    THREE.MeshNormalMaterial
+  > => {
+    const geometry = new THREE.BoxGeometry(100, 100, 100);
+    const material = new THREE.MeshNormalMaterial();
+    const box = new THREE.Mesh(geometry, material);
+    return box;
+  };
+
+  const createBox5 = () => {
+    // サイズを指定
+    const width = 960;
+    const height = 540;
+
+    // レンダラを作成
+    const renderer: any = new THREE.WebGLRenderer({
+      canvas: document.querySelector("#nyumon-sample5") as HTMLCanvasElement,
+    });
+    renderer.setPixelRatio(window.devicePixelRatio);
+    renderer.setSize(width, height);
+
+    // シーンを作成
+    const scene = new THREE.Scene();
+
+    // カメラを作成
+    const camera = new THREE.PerspectiveCamera(45, width / height);
+    camera.position.set(0, 0, +1000);
+
+    // 箱を作成
+    let boxes: THREE.Mesh<
+      THREE.BoxGeometry,
+      THREE.MeshNormalMaterial
+    >[] = new Array(10).fill(null).map((_) => createBoxFunc());
+
+    boxes.forEach((v, i) => {
+      v.position.x = Math.floor(Math.random() * 1200 - 600);
+      v.position.y = Math.floor(Math.random() * 1200 - 600);
+      v.position.x = Math.floor(Math.random() * 1200 - 600);
+    });
+    scene.add(...boxes);
+
+    tick();
+
+    // 毎フレーム時に実行されるループイベント
+    function tick() {
+      boxes.forEach((v) => {
+        v.rotation.y += 0.01;
+        v.rotation.x += 0.01;
+      });
+      renderer.render(scene, camera);
+
+      requestAnimationFrame(tick);
+    }
+  };
+
+  // didMountの後で描画しないと、Cannot read property 'width' of nullというエラーが出る
+  // canvasが表示される前だから？
+  useEffect(() => {
+    createBox();
+    createBox2();
+    createBox3();
+    createBox4();
+    createBox5();
+
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
   return (
-    <div className={styles.container}>
-      <Head>
-        <title>Create Next App</title>
-        <meta name="description" content="Generated by create next app" />
-        <link rel="icon" href="/favicon.ico" />
-      </Head>
-
-      <main className={styles.main}>
-        <h1 className={styles.title}>
-          Welcome to <a href="https://nextjs.org">Next.js!</a>
-        </h1>
-
-        <p className={styles.description}>
-          Get started by editing{' '}
-          <code className={styles.code}>pages/index.js</code>
-        </p>
-
-        <div className={styles.grid}>
-          <a href="https://nextjs.org/docs" className={styles.card}>
-            <h2>Documentation &rarr;</h2>
-            <p>Find in-depth information about Next.js features and API.</p>
-          </a>
-
-          <a href="https://nextjs.org/learn" className={styles.card}>
-            <h2>Learn &rarr;</h2>
-            <p>Learn about Next.js in an interactive course with quizzes!</p>
-          </a>
-
-          <a
-            href="https://github.com/vercel/next.js/tree/master/examples"
-            className={styles.card}
-          >
-            <h2>Examples &rarr;</h2>
-            <p>Discover and deploy boilerplate example Next.js projects.</p>
-          </a>
-
-          <a
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
-            className={styles.card}
-          >
-            <h2>Deploy &rarr;</h2>
-            <p>
-              Instantly deploy your Next.js site to a public URL with Vercel.
-            </p>
-          </a>
-        </div>
+    
+      <main>
+        <Link href="/sample2"><a> Home </a></Link>
+        <h2>three.js</h2>
+        <h3>case1</h3>
+        <canvas id="nyumon-sample1" />
+        <h3>case2 - ローテーションz軸方向追加</h3>
+        <canvas id="nyumon-sample2" />
+        <h3>case3 - ローテーション速度up</h3>
+        <canvas id="nyumon-sample3" />
+        <h3>case4 - さらにローテーション速度up</h3>
+        <canvas id="nyumon-sample4" />
+        <h3>case5 - 箱増殖(200個)</h3>
+        <canvas id="nyumon-sample5" />
       </main>
+    
+  );
+};
 
-      <footer className={styles.footer}>
-        <a
-          href="https://vercel.com?utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Powered by{' '}
-          <span className={styles.logo}>
-            <Image src="/vercel.svg" alt="Vercel Logo" width={72} height={16} />
-          </span>
-        </a>
-      </footer>
-    </div>
-  )
-}
-
-export default Home
+export default Home;
