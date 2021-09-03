@@ -193,7 +193,7 @@ export default function() {
     let boxes: THREE.Mesh<
       THREE.BoxGeometry,
       THREE.MeshNormalMaterial
-    >[] = new Array(10).fill(null).map((_) => createBoxFunc());
+    >[] = new Array(100).fill(null).map((_) => createBoxFunc());
 
     boxes.forEach((v, i) => {
       v.position.x = Math.floor(Math.random() * 1200 - 600);
@@ -240,7 +240,7 @@ export default function() {
         <canvas id="nyumon-sample3" />
         <h3>case4 - さらにローテーション速度up</h3>
         <canvas id="nyumon-sample4" />
-        <h3>case5 - 箱増殖(200個)</h3>
+        <h3>case5 - 箱増殖(100個)</h3>
         <canvas id="nyumon-sample5" />
       </Layout>
     
