@@ -22,14 +22,12 @@ export default function Sample2() {
     const camera = new THREE.PerspectiveCamera(45, width / height);
     camera.position.set(0, 0, +1000);
     // 平行光源
-    /* const directionalLight = new THREE.DirectionalLight(0X00FFFF, 2); */
-
-    const light = new THREE.HemisphereLight(0xc1b6ff, 0x0000ff, 1.0);
+    const directionalLight = new THREE.DirectionalLight(0xdcf8ff);
+    // 環境光
     const environmentalLight = new THREE.AmbientLight(0x404040);
-
-    light.position.set(1, 1, 1);
+    directionalLight.position.set(1, 1, 1);
     // シーンに追加
-    scene.add(light, environmentalLight);
+    scene.add(directionalLight, environmentalLight);
 
     // 球を作成
     const geometry = new THREE.SphereGeometry(300, 30, 30);
@@ -48,75 +46,62 @@ export default function Sample2() {
       requestAnimationFrame(tick);
     }
   };
-  const createEarth = () => {
-    // サイズを指定
-    const width = 960;
-    const height = 540;
-
-    // レンダラを作成
-    const renderer: any = new THREE.WebGLRenderer({
-      canvas: document.querySelector("#earth-rotate") as HTMLCanvasElement,
-    });
-    renderer.setPixelRatio(window.devicePixelRatio);
-    renderer.setSize(width, height);
-
-    // シーンを作成
-    const scene = new THREE.Scene();
-
-    // カメラを作成
-    const camera = new THREE.PerspectiveCamera(45, width / height, 1, 10000);
-    camera.position.set(0, 0, +1000);
-
-    // 球体を作成
-    const geometry = new THREE.SphereGeometry(300, 30, 30);
-    // 画像を読み込む
-    const loader = new THREE.TextureLoader();
-
-    const texture = loader.load("/earthmap1k.jpg");
-    // マテリアルにテクスチャーを設定
-    const material = new THREE.MeshStandardMaterial({
-      map: texture,
-    });
-    // メッシュを作成
-    const mesh = new THREE.Mesh(geometry, material);
-    // 3D空間にメッシュを追加
-    scene.add(mesh);
-
-    // 平行光源
-    const directionalLight = new THREE.DirectionalLight(0xffffff);
-    directionalLight.position.set(1, 1, 1);
-    // 環境光
-    const environmentalLight = new THREE.AmbientLight(0x404040);
-    // スポットライト光源
-    const spotLight = new THREE.SpotLight(0xffffff);
-    spotLight.position.set(1000, 1000, 1000);
-
-    spotLight.castShadow = true;
-
-    spotLight.shadow.mapSize.width = 1024;
-    spotLight.shadow.mapSize.height = 1024;
-
-    spotLight.shadow.camera.near = 500;
-    spotLight.shadow.camera.far = 4000;
-    spotLight.shadow.camera.fov = 30;
-
-    // シーンに追加
-    scene.add(environmentalLight, spotLight);
-
-    tick();
-
-    // 毎フレーム時に実行されるループイベントです
-    function tick() {
-      // メッシュを回転させる
-      mesh.rotation.x += 0.01;
-      mesh.rotation.y += 0.01;
-      mesh.rotation.z += 0.01;
-      // レンダリング
-      renderer.render(scene, camera);
-
-      requestAnimationFrame(tick);
-    }
-  };
+      const createEarth = () => {
+      // サイズを指定
+      const width = 960;
+      const height = 540;
+  
+      // レンダラを作成
+      const renderer: any = new THREE.WebGLRenderer({
+        canvas: document.querySelector("#earth-rotate") as HTMLCanvasElement,
+      });
+      renderer.setPixelRatio(window.devicePixelRatio);
+      renderer.setSize(width, height);
+  
+      // シーンを作成
+      const scene = new THREE.Scene();
+  
+      // カメラを作成
+      const camera = new THREE.PerspectiveCamera(45, width / height, 1, 10000);
+      camera.position.set(0, 0, +1000);
+  
+      // 球体を作成
+      const geometry = new THREE.SphereGeometry(300, 30, 30);
+      // 画像を読み込む
+      const loader = new THREE.TextureLoader();
+      
+      const texture = loader.load("/earthmap1k.jpg");
+      // マテリアルにテクスチャーを設定
+      const material = new THREE.MeshStandardMaterial({
+        map: texture,
+      });
+      // メッシュを作成
+      const mesh = new THREE.Mesh(geometry, material);
+      // 3D空間にメッシュを追加
+      scene.add(mesh);
+  
+      // 平行光源
+      const directionalLight = new THREE.DirectionalLight(0xffffff);
+      directionalLight.position.set(1, 1, 1);
+      // 環境光
+      const environmentalLight = new THREE.AmbientLight(0x404040);
+      // シーンに追加
+      scene.add(directionalLight, environmentalLight);
+  
+      tick();
+  
+      // 毎フレーム時に実行されるループイベントです
+      function tick() {
+        // メッシュを回転させる
+        mesh.rotation.x += 0.01;
+        mesh.rotation.y += 0.01;
+        mesh.rotation.z += 0.01;
+        // レンダリング
+        renderer.render(scene, camera);
+  
+        requestAnimationFrame(tick);
+      }
+    };
   const createGeomeryBall = () => {
     // サイズを指定
     const width = 960;
@@ -143,8 +128,8 @@ export default function Sample2() {
     // シーンに追加
     scene.add(directionalLight, environmentalLight);
 
-    const geometry = new THREE.SphereGeometry(350, 9, 9);
-    const material = new THREE.MeshLambertMaterial({ color: 0x6699ff });
+    const geometry = new THREE.SphereGeometry(350, 10, 10);
+    const material = new THREE.MeshBasicMaterial({ color: 0xfff8f8 });
     const sphere = new THREE.Mesh(geometry, material);
     scene.add(sphere);
 
@@ -176,7 +161,7 @@ export default function Sample2() {
     const scene = new THREE.Scene();
 
     // カメラを作成
-    const camera = new THREE.PerspectiveCamera(55, width / height);
+    const camera = new THREE.PerspectiveCamera(45, width / height);
     camera.position.set(0, 0, +1000);
     // 平行光源
     const directionalLight = new THREE.DirectionalLight(0xdcf8ff);
@@ -186,8 +171,8 @@ export default function Sample2() {
     // シーンに追加
     scene.add(directionalLight, environmentalLight);
 
-    const geometry = new THREE.TorusGeometry(300, 100, 64, 100);
-    const material = new THREE.MeshNormalMaterial();
+    const geometry = new THREE.TorusGeometry(300, 70, 50, 100);
+    const material = new THREE.MeshBasicMaterial({ color: 0xfff8f8 });
     const torus = new THREE.Mesh(geometry, material);
     scene.add(torus);
 
@@ -203,12 +188,13 @@ export default function Sample2() {
       requestAnimationFrame(tick);
     }
   };
-
+  
   useEffect(() => {
     createBall();
     createEarth();
     createGeomeryBall();
     createTopologieBall();
+    
   }, []);
   return (
     <Layout>
@@ -242,6 +228,7 @@ export default function Sample2() {
       </h3>
       <canvas id="topologie-ball" />
       <br />
+      
     </Layout>
   );
 }
