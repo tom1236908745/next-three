@@ -1,0 +1,25 @@
+.firstPosition {
+    position: relative;
+    overflow: hidden;
+    width: 960px;
+    height: 540px;
+}
+
+.canvasPosition {
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+.svgPosition {
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+.hubPosiotion {
+    position: absolute;
+    top: 0;
+    left: 0;
+    background: white;
+}

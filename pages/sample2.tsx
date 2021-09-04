@@ -72,7 +72,7 @@ export default function Sample2() {
     // 画像を読み込む
     const loader = new THREE.TextureLoader();
 
-    const texture = loader.load("/earthmap1k.jpg");
+    const texture = loader.load("/images/earthmap1k.jpg");
     // マテリアルにテクスチャーを設定
     const material = new THREE.MeshStandardMaterial({
       map: texture,
