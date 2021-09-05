@@ -9,6 +9,7 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@fortawesome/react-fontawesome": "^0.1.15",
     "@material-ui/core": "^4.12.3",
     "dat.gui": "^0.7.7",
     "next": "11.1.0",
@@ -18,7 +19,6 @@
   },
   "devDependencies": {
     "@fortawesome/free-brands-svg-icons": "^5.15.4",
-    "@fortawesome/react-fontawesome": "^0.1.15",
     "@types/dat.gui": "^0.7.7",
     "@types/react": "17.0.19",
     "@types/three": "^0.131.0",
