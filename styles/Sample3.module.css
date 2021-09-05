@@ -1,25 +1,30 @@
-.firstPosition {
-    position: relative;
-    overflow: hidden;
-    width: 960px;
-    height: 540px;
-}
-
-.canvasPosition {
-    position: absolute;
+.webgl {
+    position: fixed;
     top: 0;
     left: 0;
+    outline: none;
+    z-index: -1;
 }
 
-.svgPosition {
-    position: absolute;
-    top: 0;
-    left: 0;
+.intro {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 30px;
 }
 
-.hubPosiotion {
-    position: absolute;
-    top: 0;
-    left: 0;
-    background: white;
+.centerPosi {
+    text-align: center;
+}
+
+.socialMedia {
+    margin-top: 30px;
+    width: 50%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+}
+
+.font {
+    color: blue;
 }
