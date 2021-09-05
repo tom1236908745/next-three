@@ -3,7 +3,7 @@ import * as THREE from "three";
 import Link from "next/link";
 import Layout from "../coponents/layout";
 
-export default function() {
+export default function Home() {
   /** case1 */
   const createBox = () => {
     // サイズを指定

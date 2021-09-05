@@ -1,4 +1,5 @@
 import React, { useEffect } from "react";
+import Link from "next/link";
 import * as THREE from "three";
 import Layout from "../coponents/layout";
 import styles from "../styles/Sample3.module.css";
@@ -80,16 +81,13 @@ export default function Sample3() {
           <span>🌏 === 🖥</span>
         </h3>
 
-        <div className={styles.socialMedia}>
-          <a
-            target="_blank"
-            href="https://www.instagram.com/_._thatnt_._/?hl=ja"
-          >
+        <Link href="https://www.instagram.com/_._thatnt_._/?hl=ja">
+          <div className={styles.socialMedia}>
             <FontAwesomeIcon icon={faInstagram} />
-          </a>
-        </div>
+          </div>
+        </Link>
       </div>
-
+      f
       <br />
       <p className={styles.webgl}>hello</p>
       <canvas id="perspectiveCamera" className={styles.webgl}></canvas>
