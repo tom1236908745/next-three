@@ -1,13 +1,12 @@
 import React, { useEffect } from "react";
 import * as THREE from "three";
-import Layout from "../coponents/layout";
 import styles from '../styles/Sample3.module.css'
 
 export default function Sample3() {
   const createShadow = () => {
     // サイズを指定
-    const width = 960;
-    const height = 540;
+    const width = window.innerWidth;
+    const height = window.innerHeight;
 
     // レンダラーを作成
     const renderer = new THREE.WebGLRenderer({
@@ -64,7 +63,7 @@ export default function Sample3() {
       requestAnimationFrame(tick);
     }
   };
-  const createGroup = () => {
+  /* const createGroup = () => {
     // サイズを指定
     const width = 960;
     const height = 540;
@@ -145,22 +144,16 @@ export default function Sample3() {
 
       requestAnimationFrame(tick);
     }
-  };
+  }; */
   useEffect(() => {
     createShadow();
-    createGroup();
+    /* createGroup(); */
   }, []);
   return (
-    <Layout>
-      <h2>three.js</h2>
-      <br />
-      <h3>
-        case1 - The real world
-        <br />
-         🌏 === 🖥
-      </h3>
+    <>
+      
       <canvas id="perspectiveCamera" />
-      <br />
+      {/* <br />
       <br />
       <br />
       <h3>
@@ -169,7 +162,7 @@ export default function Sample3() {
         grouping
       </h3>
       <canvas id="groupRotating" />
-      <br />
-    </Layout>
+      <br /> */}
+    </>
   );
 }
