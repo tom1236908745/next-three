@@ -81,7 +81,7 @@ export default function Sample3() {
           <span>🌏 === 🖥</span>
         </h3>
 
-        <Link href="https://www.instagram.com/_._thatnt_._/?hl=ja">
+        <Link href="https://www.instagram.com/_._thatnt_._/?hl=ja" passHref>
           <div className={styles.socialMedia}>
             <FontAwesomeIcon icon={faInstagram} />
           </div>
