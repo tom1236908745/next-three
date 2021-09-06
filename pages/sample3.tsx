@@ -89,7 +89,7 @@ export default function Sample3() {
     const camera = new THREE.PerspectiveCamera(45, width / height);
     camera.position.set(0, 0, +1000);
 
-    var sphere_geometry = new THREE.SphereGeometry(300, 128, 128);
+    var sphere_geometry = new THREE.SphereGeometry(200, 128, 128);
     var material = new THREE.MeshNormalMaterial();
     var sphere = new THREE.Mesh(sphere_geometry, material);
     scene.add(sphere);
@@ -186,13 +186,13 @@ export default function Sample3() {
         <h2 className={styles.font}>three.js</h2>
         <h3 className={styles.centerPosi}>
           case1 - The real world
-          <br />
-          <span>🌏 === 🖥</span>
+          {/* <br />
+          <span>🌏 === 🖥</span> */}
         </h3>
 
         <Link href="https://www.instagram.com/_._thatnt_._/?hl=ja" passHref>
           <div className={styles.socialMedia}>
-            <FontAwesomeIcon icon={faInstagram} />
+            {/* <FontAwesomeIcon icon={faInstagram} /> */}
           </div>
         </Link>
       </div>
