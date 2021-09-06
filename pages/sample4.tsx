@@ -5,14 +5,14 @@ import Layout from "../coponents/layout";
 import styles from "../styles/Sample3.module.css";
 
 export default function Sample3() {
-  const createShadow = () => {
+  const createCircle = () => {
     // サイズを指定
     const width = window.innerWidth;
     const height = window.innerHeight;
 
     // レンダラーを作成
     const renderer = new THREE.WebGLRenderer({
-      canvas: document.querySelector("#perspectiveCamera") as HTMLCanvasElement,
+      canvas: document.querySelector("#raibowCircle") as HTMLCanvasElement,
     });
 
     renderer.setPixelRatio(window.devicePixelRatio);
@@ -36,11 +36,12 @@ export default function Sample3() {
   };
 
   useEffect(() => {
-    createShadow();
+    createCircle();
   }, []);
   return (
     <Layout>
-      <canvas id="perspectiveCamera"></canvas>
+      <canvas id="raibowCircle"></canvas>
     </Layout>
+    
   );
 }
