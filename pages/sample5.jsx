@@ -1,7 +1,7 @@
 import React, { Suspense } from 'react'
 import { Canvas } from '@react-three/fiber'
 import { OrbitControls, Stage } from '@react-three/drei'
-import Shoe from '../coponents/Shoe'
+import Shoe from '../coponents/hoe'
 import Layout from "../coponents/layout";
 import styles from "../styles/Sample5.module.css";
 
