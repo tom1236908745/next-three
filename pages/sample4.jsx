@@ -17,7 +17,9 @@ extend({ LUTPass });
 function Grading() {
   const { texture3D } = useLoader(LUTCubeLoader, "images/cubicle-99.CUBE");
   return (
-    <Effects>children={<lUTPass attachArray="passes" lut={texture3D} />}</Effects>
+    <Effects>
+      children={<lUTPass attachArray="passes" lut={texture3D} />}
+    </Effects>
   );
 }
 
@@ -41,28 +43,30 @@ function Sphere(props) {
 export default function App() {
   return (
     <>
-      <h3 className={styles.character}> react - three - fieber </h3>{" "}
-      <Canvas
-        className={styles.root}
-        frameloop="demand"
-        dpr={[1, 2]}
-        camera={{ position: [0, 0, 5], fov: 20 }}
-      >
-        <spotLight
-          intensity={0.5}
-          angle={0.2}
-          penumbra={1}
-          position={[5, 15, 10]}
-        />
-        <pointLight position={[-20, -5, -10]} color="red" intensity={0.8} />
-        <Suspense fallback={null}>
-          <Sphere />
-          <Grading />
-          <Environment preset="warehouse" />
-        </Suspense>
-        <OrbitControls />
-      </Canvas>
-      <Loader />
+      <Layout>
+        <h3 className={styles.character}> react - three - fieber </h3>{" "}
+        <Canvas
+          className={styles.root}
+          frameloop="demand"
+          dpr={[1, 2]}
+          camera={{ position: [0, 0, 5], fov: 20 }}
+        >
+          <spotLight
+            intensity={0.5}
+            angle={0.2}
+            penumbra={1}
+            position={[5, 15, 10]}
+          />
+          <pointLight position={[-20, -5, -10]} color="red" intensity={0.8} />
+          <Suspense fallback={null}>
+            <Sphere />
+            <Grading />
+            <Environment preset="warehouse" />
+          </Suspense>
+          <OrbitControls />
+        </Canvas>
+        <Loader />
+      </Layout>
     </>
   );
 }
