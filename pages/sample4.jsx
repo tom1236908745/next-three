@@ -17,7 +17,7 @@ extend({ LUTPass });
 function Grading() {
   const { texture3D } = useLoader(LUTCubeLoader, "images/cubicle-99.CUBE");
   return (
-    <Effects children={<lUTPass attachArray="passes" lut={texture3D} />} />
+    <Effects><lUTPass attachArray="passes" lut={texture3D} /></Effects>
   );
 }
 
@@ -35,7 +35,7 @@ function Sphere(props) {
           roughness={1}
           metalness={0.9}
         />{" "}
-      </mesh>
+      </mesh>{" "}
     </>
   );
 }
@@ -44,9 +44,7 @@ export default function Sample4() {
   return (
     <>
       <Layout>
-          <h3 className={styles.character}>
-              react-three-fieber
-          </h3>
+        <h3 className={styles.character}> react - three - fieber </h3>{" "}
         <Canvas
           className={styles.root}
           frameloop="demand"
@@ -68,7 +66,7 @@ export default function Sample4() {
           <OrbitControls />
         </Canvas>{" "}
         <Loader />
-      </Layout>
+      </Layout>{" "}
     </>
   );
 }
