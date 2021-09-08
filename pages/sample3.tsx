@@ -192,18 +192,16 @@ export default function Sample3() {
 
         <Link href="https://www.instagram.com/_._thatnt_._/?hl=ja" passHref>
           <div className={styles.socialMedia}>
-            {/* <FontAwesomeIcon icon={faInstagram} /> */}
+            <FontAwesomeIcon icon={faInstagram} />
           </div>
         </Link>
       </div>
-      f
       <br />
       <p className={styles.webgl}>hello</p>
       <canvas id="perspectiveCamera" className={styles.webgl}></canvas>
       <Link href="https://github.com/tom1236908745" passHref>
         <canvas id="raibowCircle"></canvas>
       </Link>
-      
       <canvas id="earthRotate" />
     </Layout>
   );

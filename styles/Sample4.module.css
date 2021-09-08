@@ -1,0 +1,16 @@
+.root {
+    width: 100vw;
+    height: 100vh !important;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-image: linear-gradient(-225deg, #d834e0 0%, #368ddf 100%);
+}
+
+.character {
+    margin-bottom: 0;
+    outline: none;
+    z-index: -1;
+    text-align: center;
+    background-image: linear-gradient(-225deg, #d834e0 0%, #368ddf 100%);
+}
