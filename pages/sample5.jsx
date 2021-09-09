@@ -16,7 +16,7 @@ export default function Sample5() {
           <Shoe scale={-1} rotation={[0, 0.5, Math.PI]} position={[0, 0, -2]} />
         </Stage>
       </Suspense>
-      <OrbitControls autoRotate />
+      <OrbitControls autoRotate enableZoom={false}/>
     </Canvas>
     </Layout>
     </>

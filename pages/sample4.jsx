@@ -1,4 +1,4 @@
-import React, { Suspense } from "react";
+import React, { Suspense, useState } from "react";
 import { Canvas, extend, useLoader } from "@react-three/fiber";
 import Layout from "../coponents/layout";
 import {
@@ -25,8 +25,10 @@ function Grading() {
 
 function Sphere(props) {
   const texture = useTexture("images/terrazo.png");
+  
+
   return (
-    <mesh {...props}>
+    <mesh {...props} >
       <sphereBufferGeometry args={[0.5, 64, 64]} />
       <meshPhysicalMaterial
         envMapIntensity={0.4}
@@ -41,6 +43,7 @@ function Sphere(props) {
 }
 
 export default function App() {
+  const [active, setActive] = useState(false)
   return (
     <>
       <Layout>
@@ -57,7 +60,11 @@ export default function App() {
             penumbra={1}
             position={[5, 15, 10]}
           />
-          <pointLight position={[-20, -5, -10]} color="red" intensity={0.8} />
+          <pointLight
+            position={[-20, -5, -10]}
+            color="purple"
+            intensity={2.0}
+          />
           <Suspense fallback={null}>
             <Sphere />
             <Grading />
